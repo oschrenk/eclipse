@@ -1,0 +1,436 @@
+<!-- NOTE: In order for these to match correctly, the newer toolkits MUST remain earlier in the list -->
+<toolkit-definitions>
+
+	
+	<toolkit-definition id="se.toolkit.2_2_0" name="The SE J2ME Wireless Toolkit 2.2.0 " classpathVariable="SE_WTK220">
+		<matcher class="eclipseme.toolkit.sonyericsson.impl.SEToolkitMatcher">
+			<property name="relativePath" value="J2ME_SDK/PC_Emulation/WTK2" />
+			<property name="matchExpression" value="Sony Ericsson J2ME SDK 2\.2.*" />
+		</matcher>
+
+
+		<shared-configurations>
+			<configuration
+				id="se.cldc_1_0.2_2_0"
+				name="CLDC-1.0 (${toolkit-definition@name})"
+				configurationName="CLDC"
+				configurationVersion="1.0"
+				library="SE_WTK220/J2ME_SDK/PC_Emulation/WTK2/lib/cldcapi10.jar" />
+			<configuration
+				id="se.cldc_1_1.2_2_0"
+				name="CLDC-1.1 (${toolkit-definition@name})"
+				configurationName="CLDC"
+				configurationVersion="1.1"
+				library="SE_WTK220/J2ME_SDK/PC_Emulation/WTK2/lib/cldcapi11.jar" />
+		</shared-configurations>
+		
+		<shared-profiles>
+			<profile
+				id="se.midp_1_0.2_2_0"
+				name="MIDP-1.0 (${toolkit-definition@name})"
+				profileName="MIDP"
+				profileVersion="1.0">
+				<libraries>
+					<library path="SE_WTK220/J2ME_SDK/PC_Emulation/WTK2/lib/midpapi10.jar" />
+				</libraries>
+			</profile>
+			
+			<profile
+				id="se.midp_2_0.2_2_0"
+				name="MIDP-2.0 (${toolkit-definition@name})"
+				profileName="MIDP"
+				profileVersion="2.0">
+				<libraries>
+					<library path="SE_WTK220/J2ME_SDK/PC_Emulation/WTK2/lib/midpapi20.jar" />
+				</libraries>
+			</profile>
+			
+			<profile
+				id="se.wma_1_1.2_2_0"
+				name="Wireless Messaging 1.1 (${toolkit-definition@name})"
+				profileName="WMA"
+				profileVersion="1.1">
+				<libraries>
+					<library path="SE_WTK220/J2ME_SDK/PC_Emulation/WTK2/lib/wma11.jar" />
+				</libraries>
+			</profile>
+			
+			<profile
+				id="se.wma_2_0.2_2_0"
+				name="Wireless Messaging 2.0 (${toolkit-definition@name})"
+				profileName="WMA"
+				profileVersion="2.0">
+				<libraries>
+					<library path="SE_WTK220/J2ME_SDK/PC_Emulation/WTK2/lib/wma20.jar" />
+				</libraries>
+			</profile>
+			
+			<profile
+				id="se.jabwt_1_0.2_2_0"
+				name="Bluetooth API 1.0 (${toolkit-definition@name})"
+				profileName="JABWT"
+				profileVersion="1.0">
+				<libraries>
+					<library path="SE_WTK220/J2ME_SDK/PC_Emulation/WTK2/lib/jsr082.jar" />
+				</libraries>
+			</profile>
+			
+			<profile
+				id="se.jsr75.2_2_0"
+				name="JSR 75 API 1.0 (${toolkit-definition@name})"
+				profileName="JSR75"
+				profileVersion="1.0">
+				<libraries>
+					<library path="SE_WTK220/J2ME_SDK/PC_Emulation/WTK2/lib/jsr75.jar" />
+				</libraries>
+			</profile>
+			
+			<profile
+				id="se.mmapi.2_2_0"
+				name="Multimedia (${toolkit-definition@name})"
+				profileName="MMAPI"
+				profileVersion="1.0">
+				<libraries>
+					<library path="SE_WTK220/J2ME_SDK/PC_Emulation/WTK2/lib/mmapi.jar" />
+				</libraries>
+			</profile>
+
+			<profile
+				id="se.3d.2_2_0"
+				name="Mobile 3D (${toolkit-definition@name})"
+				profileName="3D"
+				profileVersion="1.0">
+				<libraries>
+					<library path="SE_WTK220/J2ME_SDK/PC_Emulation/WTK2/lib/mobile3d.jar" />
+				</libraries>
+			</profile>
+		</shared-profiles>
+		
+		<platform-definitions>
+			<platform-definition
+				id="se.platform.midp_1_0.2_2_0"
+				name="${toolkit-definition@name} MIDP 1.0 Platform"
+				emulator="eclipseme.core.model.impl.uei.UEIEmulator"
+				preverifier="eclipseme.toolkit.sun.impl.Sun21Preverifier"
+				relativePath="J2ME_SDK/PC_Emulation/WTK2">
+
+				<configuration ref="se.cldc_1_0.2_2_0" />
+				<profiles>
+					<profile ref="se.midp_1_0.2_2_0" />
+				</profiles>
+			</platform-definition>
+			<platform-definition
+				id="se.platform.midp_2_0.2_2_0"
+				name="${toolkit-definition@name} MIDP 2.0 Platform"
+				emulator="eclipseme.core.model.impl.uei.UEIEmulator"
+				preverifier="eclipseme.toolkit.sun.impl.Sun21Preverifier"
+				relativePath="J2ME_SDK/PC_Emulation/WTK2">
+
+				<configuration ref="se.cldc_1_1.2_2_0" />
+				<profiles>
+					<profile ref="se.midp_2_0.2_2_0" />
+					<profile ref="se.wma_1_1.2_2_0" />
+					<profile ref="se.mmapi.2_2_0" />
+				</profiles>
+			</platform-definition>
+			<platform-definition
+				id="se.platform.midp_2_0all.2_2_0"
+				name="${toolkit-definition@name} MIDP 2.0 All Profiles Platform"
+				emulator="eclipseme.core.model.impl.uei.UEIEmulator"
+				preverifier="eclipseme.toolkit.sun.impl.Sun21Preverifier"
+				relativePath="J2ME_SDK/PC_Emulation/WTK2">
+
+				<configuration ref="se.cldc_1_1.2_2_0" />
+				<profiles>
+					<profile ref="se.midp_2_0.2_2_0" />
+					<profile ref="se.wma_1_1.2_2_0" />
+					<profile ref="se.mmapi.2_2_0" />
+					<profile ref="se.3d.2_2_0" />
+				</profiles>
+			</platform-definition>
+			
+			
+			<platform-definition
+				id="se.platform.midp_2_0P910i.2_2_0"
+				name="${toolkit-definition@name} MIDP 2.0 P910i Profiles Platform"
+				emulator="eclipseme.core.model.impl.uei.UEIEmulator"
+				preverifier="eclipseme.toolkit.sun.impl.Sun21Preverifier"
+				relativePath="J2ME_SDK/PC_Emulation/WTK2">
+
+				<configuration ref="se.cldc_1_0.2_2_0" />
+				<profiles>
+					<profile ref="se.midp_2_0.2_2_0" />
+					<profile ref="se.wma_1_1.2_2_0" />
+					<profile ref="se.mmapi.2_2_0" />
+					<profile ref="se.3d.2_2_0" />
+					<profile ref="se.jabwt_1_0.2_2_0" />
+				</profiles>
+			</platform-definition>
+		</platform-definitions>
+
+	</toolkit-definition>
+
+
+
+	<toolkit-definition id="se.toolkit.2_2_0b" name="Sony Ericsson J2ME SDK 2.2.0" classpathVariable="SEWTK220">
+		<matcher class="eclipseme.toolkit.sonyericsson.impl.SEToolkitMatcher">
+			<property name="relativePath" value="J2ME_SDK/PC_Emulation/WTK2" />
+			<property name="matchExpression" value="Sony Ericsson J2ME SDK *" />
+		</matcher>
+		
+		<shared-configurations>
+			<configuration
+				id="se.cldc_1_0.2_1_x"
+				name="CLDC-1.0 (${toolkit-definition@name})"
+				configurationName="CLDC"
+				configurationVersion="1.0"
+				library="SEWTK213/J2ME_SDK/PC_Emulation/WTK2/lib/cldcapi10.jar" />
+			<configuration
+				id="se.cldc_1_1.2_1_x"
+				name="CLDC-1.1 (${toolkit-definition@name})"
+				configurationName="CLDC"
+				configurationVersion="1.1"
+				library="SEWTK213/J2ME_SDK/PC_Emulation/WTK2/lib/cldcapi11.jar" />
+		</shared-configurations>
+		
+		<shared-profiles>
+			<profile
+				id="se.midp_1_0.2_1_x"
+				name="MIDP-1.0 (${toolkit-definition@name})"
+				profileName="MIDP"
+				profileVersion="1.0">
+				<libraries>
+					<library path="SEWTK213/J2ME_SDK/PC_Emulation/WTK2/lib/midpapi10.jar" />
+				</libraries>
+			</profile>
+			
+			<profile
+				id="se.midp_2_0.2_1_x"
+				name="MIDP-2.0 (${toolkit-definition@name})"
+				profileName="MIDP"
+				profileVersion="2.0">
+				<libraries>
+					<library path="SEWTK213/J2ME_SDK/PC_Emulation/WTK2/lib/midpapi20.jar" />
+				</libraries>
+			</profile>
+			
+			<profile
+				id="se.wma.2_1_x"
+				name="Wireless Messaging (${toolkit-definition@name})"
+				profileName="WMA"
+				profileVersion="1.0">
+				<libraries>
+					<library path="SEWTK213/J2ME_SDK/PC_Emulation/WTK2/lib/wma.jar" />
+				</libraries>
+			</profile>
+			
+			<profile
+				id="se.mmapi"
+				name="Multimedia (${toolkit-definition@name})"
+				profileName="MMAPI"
+				profileVersion="1.0">
+				<libraries>
+					<library path="SEWTK213/J2ME_SDK/PC_Emulation/WTK2/lib/mmapi.jar" />
+				</libraries>
+			</profile>
+
+			<profile
+				id="se.3d.2_1_x"
+				name="Mobile 3D (${toolkit-definition@name})"
+				profileName="3D"
+				profileVersion="1.0">
+				<libraries>
+					<library path="SEWTK213/J2ME_SDK/PC_Emulation/WTK2/lib/mobile3d.jar" />
+				</libraries>
+			</profile>
+		</shared-profiles>
+		
+		<platform-definitions>
+			<platform-definition
+				id="se.platform.midp_1_0.2_1_x"
+				name="${toolkit-definition@name} MIDP 1.0 Platform"
+				emulator="eclipseme.core.model.impl.uei.UEIEmulator"
+				preverifier="eclipseme.toolkit.sun.impl.Sun21Preverifier"
+				relativePath="J2ME_SDK/PC_Emulation/WTK2">
+
+				<configuration ref="se.cldc_1_0.2_1_x" />
+				<profiles>
+					<profile ref="se.midp_1_0.2_1_x" />
+				</profiles>
+			</platform-definition>
+			<platform-definition
+				id="se.platform.midp_2_0.2_1_x"
+				name="${toolkit-definition@name} MIDP 2.0 Platform"
+				emulator="eclipseme.core.model.impl.uei.UEIEmulator"
+				preverifier="eclipseme.toolkit.sun.impl.Sun21Preverifier"
+				relativePath="J2ME_SDK/PC_Emulation/WTK2">
+
+				<configuration ref="se.cldc_1_1.2_1_x" />
+				<profiles>
+					<profile ref="se.midp_2_0.2_1_x" />
+					<profile ref="se.wma.2_1_x" />
+					<profile ref="se.mmapi.2_1_x" />
+				</profiles>
+			</platform-definition>
+			<platform-definition
+				id="se.platform.midp_2_0all.2_1_x"
+				name="${toolkit-definition@name} MIDP 2.0 All Profiles Platform"
+				emulator="eclipseme.core.model.impl.uei.UEIEmulator"
+				preverifier="eclipseme.toolkit.sun.impl.Sun21Preverifier"
+				relativePath="J2ME_SDK/PC_Emulation/WTK2">
+
+				<configuration ref="cldc11" />
+				<profiles>
+					<profile ref="se.midp_2_0.2_1_x" />
+					<profile ref="se.wma.2_1_x" />
+					<profile ref="se.mmapi.2_1_x" />
+					<profile ref="se.3d.2_1_x" />
+				</profiles>
+			</platform-definition>
+		</platform-definitions>
+	</toolkit-definition>
+
+	<toolkit-definition id="se.toolkit.2_1" name="Sony Ericsson J2ME SDK (WTK 2.1)" classpathVariable="SE_WTK21">
+		<matcher class="eclipseme.toolkit.sonyericsson.impl.SEToolkitMatcher">
+			<property name="relativePath" value="J2ME_SDK/PC_Emulation/WTK2" />
+			<property name="matchExpression" value="Sony Ericsson J2ME SDK 2\.1.*" />
+		</matcher>
+		<platform-definitions>
+			<platform-definition
+				id="se.platform.midp_1_0.2_1"
+				name="${toolkit-definition@name} MIDP 1.0 Platform"
+				emulator="eclipseme.core.model.impl.uei.UEIEmulator"
+				preverifier="eclipseme.toolkit.sun.impl.Sun21Preverifier"
+				relativePath="J2ME_SDK/PC_Emulation/WTK2">
+
+				<configuration
+					id="se.cldc_1_0.2_1"
+					name="CLDC-1.0 (${toolkit-definition@name})"
+					configurationName="CLDC"
+					configurationVersion="1.0"
+					library="${toolkit-definition@classpathVariable}/${platform-definition@relativePath}/lib/cldcapi10.jar" />
+				<profiles>
+					<profile
+						id="se.midp_1_0.2_1"
+						name="MIDP-1.0 (${toolkit-definition@name})"
+						profileName="MIDP"
+						profileVersion="1.0">
+						<libraries>
+							<library path="${toolkit-definition@classpathVariable}/${platform-definition@relativePath}/lib/midpapi10.jar" />
+						</libraries>
+					</profile>
+				</profiles>
+			</platform-definition>
+			<platform-definition
+				id="se.platform.midp_2_0.2_1"
+				name="${toolkit-definition@name} MIDP 2.0 Platform"
+				emulator="eclipseme.core.model.impl.uei.UEIEmulator"
+				preverifier="eclipseme.toolkit.sun.impl.Sun21Preverifier"
+				relativePath="J2ME_SDK/PC_Emulation/WTK2">
+
+				<configuration
+					id="se.cldc_1_1.2_1"
+					name="CLDC-1.1 (${toolkit-definition@name})"
+					configurationName="CLDC"
+					configurationVersion="1.1"
+					library="${toolkit-definition@classpathVariable}/${platform-definition@relativePath}/lib/cldcapi11.jar" />
+				<profiles>
+					<profile
+						id="se.midp_2_0.2_1"
+						name="MIDP-2.0 (${toolkit-definition@name})"
+						profileName="MIDP"
+						profileVersion="2.0">
+						<libraries>
+							<library path="${toolkit-definition@classpathVariable}/${platform-definition@relativePath}/lib/midpapi20.jar" />
+						</libraries>
+					</profile>
+					<profile
+						id="se.wma.2_1"
+						name="Wireless Messaging (${toolkit-definition@name})"
+						profileName="MIDP"
+						profileVersion="2.0">
+						<libraries>
+							<library path="${toolkit-definition@classpathVariable}/${platform-definition@relativePath}/lib/wma.jar" />
+						</libraries>
+					</profile>
+					<profile
+						id="se.mmapi.2_1"
+						name="Multimedia (${toolkit-definition@name})"
+						profileName="MIDP"
+						profileVersion="2.0">
+						<libraries>
+							<library path="${toolkit-definition@classpathVariable}/${platform-definition@relativePath}/lib/mmapi.jar" />
+						</libraries>
+					</profile>
+				</profiles>
+			</platform-definition>
+		</platform-definitions>
+	</toolkit-definition>
+	
+		<toolkit-definition id="se.toolkit.2_2_0a" name="SE J2ME Wireless Toolkit 2.2.0 test1" classpathVariable="SE_WTK220">
+			<matcher class="eclipseme.toolkit.sonyericsson.impl.SEToolkitMatcher">
+				<property name="relativePath" value="J2ME_SDK/PC_Emulation/WTK2" />
+				<property name="matchExpression" value="Sony Ericsson J2ME SDK 2\.2.*" />
+			</matcher>
+			<platform-definitions>
+				<platform-definition 
+					id="se.platform.2_2_0a"
+					name="Sony Ericsson J2ME SDK (WTK 2_2_0) Platform"
+					emulator="eclipseme.core.model.impl.uei.UEIEmulator"
+					preverifier="eclipseme.toolkit.sun.impl.SunPreverifier"
+					relativePath="J2ME_SDK/PC_Emulation/WTK2">
+					
+					<configuration
+						id="se.cldc_1_0.2_2_0a"
+						name="CLDC-1.0 (${platform-definition@name})"
+						configurationName="CLDC"
+						configurationVersion="1.0" />
+					<profiles>
+						<profile
+							id="se.midp_1_0.2_2_0a"
+							name="MIDP-1.0 (${platform-definition@name})"
+							profileName="MIDP"
+							profileVersion="1.0">
+							<libraries>
+								<library path="${toolkit-definition@classpathVariable}/${platform-definition@relativePath}/lib/midpapi.zip" />
+							</libraries>
+						</profile>
+					</profiles>
+				</platform-definition>
+			</platform-definitions>
+	</toolkit-definition>
+	
+	
+	<toolkit-definition id="se.toolkit.1_0_4" name="J2ME Wireless Toolkit 1.0.4" classpathVariable="SE_WTK">
+		<matcher class="eclipseme.toolkit.sonyericsson.impl.SEToolkitMatcher">
+			<property name="relativePath" value="J2ME_SDK/PC_Emulation/WTK1" />
+			<property name="matchExpression" value="Sony Ericsson J2ME SDK 1\.2.*" />
+		</matcher>
+		<platform-definitions>
+			<platform-definition 
+				id="se.platform.1_0_4"
+				name="Sony Ericsson J2ME SDK (WTK 1.0.4) Platform"
+				emulator="eclipseme.core.model.impl.uei.UEIEmulator"
+				preverifier="eclipseme.toolkit.sun.impl.SunPreverifier"
+				relativePath="J2ME_SDK/PC_Emulation/WTK1">
+				
+				<configuration
+					id="se.cldc_1_0.1_0_4"
+					name="CLDC-1.0 (${platform-definition@name})"
+					configurationName="CLDC"
+					configurationVersion="1.0" />
+				<profiles>
+					<profile
+						id="se.midp_1_0.1_0_4"
+						name="MIDP-1.0 (${platform-definition@name})"
+						profileName="MIDP"
+						profileVersion="1.0">
+						<libraries>
+							<library path="${toolkit-definition@classpathVariable}/${platform-definition@relativePath}/lib/midpapi.zip" />
+						</libraries>
+					</profile>
+				</profiles>
+			</platform-definition>
+		</platform-definitions>
+	</toolkit-definition>
+</toolkit-definitions>

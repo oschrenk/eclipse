@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<templates>
+	<template autoinsert="true" context="javadoc" deleted="false" description="sf category action" enabled="true" name="action">@category action
+	</template>
+	<template autoinsert="true" context="javadoc" deleted="false" description="sf" enabled="true" name="auth_date">/**&#13;
+		* @author ${user}&#13;* @since ${date}
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf add " enabled="true" name="cadd">
+		//add ${date}, ${user}
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf" enabled="true" name="check">//CHECK </template>
+	<template autoinsert="true" context="java" deleted="false" description="sf" enabled="true" name="crem">
+		//removed ${date}, Sven Fiebiger
+	</template>
+	<template autoinsert="true" context="javadoc" deleted="false" description="sf nur datum" enabled="true" name="date">${date}</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf file comment used by the class and interface wizards" enabled="true"
+		name="filecomment"
+	>/*
+		*******************************************************************************
+		* ${file}
+		* $$Id: $$
+		*
+		*******************************************************************************
+		*
+		* Copyright: Q2WEB GmbH
+		* quality to the web
+		*
+		* Tel : +49 (0) 211 / 159694-00 Kronprinzenstr. 82-84
+		* Fax : +49 (0) 211 / 159694-09 40217 Düsseldorf
+		* eMail: info@q2web.de http://www.q2web.de
+		*
+		*
+		* Author: ${user}
+		*
+		* Created: ${date}
+		*
+		* Copyright (c) 2009 Q2WEB GmbH.
+		* All rights reserved.
+		*
+		*******************************************************************************
+		*/</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf //FIXME" enabled="true" name="fix">
+		//FIXME ${cursor}
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf //FEATURE_REQUEST low priority Task" enabled="true" name="fr">//FEATURE_REQUEST
+	</template>
+	<template autoinsert="true" context="javadoc" deleted="false" description="sf category getter" enabled="true" name="get">@category getter
+	</template>
+	<template autoinsert="true" context="javadoc" deleted="false" description="sf grösserKleiner &amp;gt; &amp;lt;" enabled="true" name="grkl">/**&#13;
+		&amp;gt;${cursor}&amp;lt;
+	</template>
+	<template autoinsert="true" context="javadoc" deleted="false" description="sf category init" enabled="true" name="init">@category init</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf logDebug" enabled="true" name="ld">LOG.debug("${cursor}");</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf Debug.logDebug Trace" enabled="true" name="ld0">LOG.debug("${enclosing_method}()
+		${cursor}");</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf log.debug mit Params" enabled="true" name="ld0e">if(LOG.isDebugEnabled())
+		{LOG.debug("${enclosing_method}(${enclosing_method_arguments}) ${cursor}");}</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf log debug mit argumenten" enabled="true" name="ld0es">if(LOG.isDebugEnabled())
+		{LOG.debug("${enclosing_method}("+${enclosing_method_arguments}+") ${cursor}");}</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf log.isDebugEnabled" enabled="true" name="lde">if(LOG.isDebugEnabled())
+		{LOG.debug("${cursor}");}</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf log.debug if enabled with params" enabled="true" name="lde0_array">if(LOG.isDebugEnabled())
+		{LOG.debug("${enclosing_method}("+ToStringBuilder.reflectionToString( new Object[] {${enclosing_method_arguments}},ToStringStyle.SIMPLE_STYLE)+")
+		${cursor}");}</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf logError" enabled="true" name="le">LOG.error("${cursor}");
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf LogError Trace" enabled="true" name="le0">LOG.error("${enclosing_method}()
+		${cursor}");
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf logInfo" enabled="true" name="li">LOG.info("${cursor}");
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="log.isInfoEnabled" enabled="true" name="lie">if(LOG.isInfoEnabled())
+		{LOG.info("${cursor}");}</template>
+	<template autoinsert="true" context="java" deleted="false" description="log.trace" enabled="true" name="lt">LOG.trace("${cursor}");</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf log.trace methode" enabled="true" name="lt0">LOG.trace("${enclosing_method}()
+		${cursor}");</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf log.trace mit Methode und parameter namen" enabled="true" name="lt0e">if(LOG.isTraceEnabled())
+		{LOG.trace("${enclosing_method}(${enclosing_method_arguments}) ${cursor}");}</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf log.isTraceEnabled" enabled="true" name="lte">if(LOG.isTraceEnabled())
+		{LOG.trace("${cursor}");}</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf log.trace if enabled with params" enabled="true" name="lte0">if(LOG.isTraceEnabled())
+		{LOG.trace("${enclosing_method}("+${enclosing_method_arguments}+") ${cursor}");}</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf log.trace if enabled with params" enabled="true" name="lte0_array">if(LOG.isTraceEnabled())
+		{LOG.trace("${enclosing_method}("+ToStringBuilder.reflectionToString( new Object[] {${enclosing_method_arguments}},ToStringStyle.SIMPLE_STYLE)+")
+		${cursor}");}</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf logWarning" enabled="true" name="lw">LOG.warn("${cursor}");
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf NotImplementedException" enabled="true" name="notImpl">throw new
+		NotImplementedException("TODO: ${enclosing_type}.${enclosing_method}(${enclosing_method_arguments}):${return_type} not implemented");</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf Offene Fragen" enabled="true" name="oq">//???
+	</template>
+	<template autoinsert="true" context="javadoc" deleted="false" description="sf category setter" enabled="true" name="set">@category setter
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf //TODO" enabled="true" name="td">//TODO ${cursor}</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf to String ToStringBuilder" enabled="true" name="tst1"> /** &#13;
+		* @see java.lang.Object#toString()&#13;
+		*/&#13;
+		@Override&#13;
+		public String toString() {&#13;
+		return new ToStringBuilder(this).append("${cursor}").toString();&#13;
+		}</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf type comment used by the class and interface wizards" enabled="true"
+		name="typecomment"
+	>/** * ${cursor} * sre * @author ${user} * @version $$Revision:$$ */
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf UnsupportedOperationException" enabled="true" name="unOp">throw new
+		UnsupportedOperationException("${enclosing_type}.${enclosing_method}(${enclosing_method_arguments}):${return_type} not implemented");&#13;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="sf //XXX" enabled="true" name="xxx">//XXX ${cursor}	</template>
+</templates>
